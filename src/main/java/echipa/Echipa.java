@@ -1,8 +1,7 @@
-package entity;
+package echipa;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,17 +10,20 @@ import java.util.List;
 
 @NoArgsConstructor
 @EqualsAndHashCode
+@Entity
+@Getter @Setter
 public class Echipa {
 
 
-
+@Id @GeneratedValue @NonNull
     private Integer idEchipa;
-    private Specializare specializare;
-    private String abilitati;
-
+  @NonNull private Specializare specializare;
+    @NonNull  private String abilitati;
+ @OneToMany
     private List<Angajat> angajati = new ArrayList<Angajat>();
 
-    private TeamLeader teamLeader;
+@OneToOne
+     @NonNull private TeamLeader teamLeader;
 
     // properties from bean accessors
     public Echipa(Integer idEchipa, Specializare specializare, String competente) {

@@ -1,11 +1,13 @@
-package entity;
+package echipa;
 
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.Entity;
+import lombok.*;
 
 @Data @NoArgsConstructor
-public class TeamLeader extends Angajat{
+@Getter @Setter   @EqualsAndHashCode
+@Entity
+public class TeamLeader extends Angajat {
 
     private String abilitatiTehnice; // JEE, Spring, .NET, JS/Node.js, Ruby_Rails
     //

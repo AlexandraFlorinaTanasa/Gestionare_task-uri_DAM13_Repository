@@ -1,6 +1,4 @@
-package entity;
-
-
+package echipa;
 
 
 public class TeamFactory {

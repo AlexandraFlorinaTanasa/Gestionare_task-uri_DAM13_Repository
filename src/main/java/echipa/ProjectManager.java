@@ -1,10 +1,13 @@
-package entity;
+package echipa;
 
 
-import lombok.Data;
+import jakarta.persistence.Entity;
+import lombok.*;
 
 @Data
-public class ProjectManager extends Angajat{
+@Entity @Getter @Setter  @EqualsAndHashCode
+
+public class ProjectManager extends Angajat {
 
     private Integer experientaManageriala; // in ani
     private String abilitatiManageriale; // agile, cascade, RUP

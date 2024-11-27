@@ -1,19 +1,26 @@
-package entity;
+package echipa;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
+
 
 @Data
 @EqualsAndHashCode
 @NoArgsConstructor
-
-public class Angajat
-        implements Comparable<Angajat> {
+@Entity
+@Getter @Setter
+@Inheritance(strategy= InheritanceType.JOINED)
+public class Angajat implements Comparable<Angajat> {
+    @Id
+    @GeneratedValue
+    @NonNull
     private Integer id;
-    private String nume;
-    private String email;
-    private Rol rol;
+   @NonNull private String nume;
+   @NonNull private String email;
+   @NonNull private Rol rol;
+
+
+
 
     public Angajat(Integer id, String nume) {
         this.id = id;
