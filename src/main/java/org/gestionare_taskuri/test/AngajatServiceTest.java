@@ -1,18 +1,16 @@
-
+package org.gestionare_taskuri.test;
 
 import echipa.Angajat;
 import org.example.gestionare_taskuri.AngajatRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import servicii.AngajatService;
 
-import static org.mockito.Mockito.*;
-        import static org.junit.jupiter.api.Assertions.*;
-
-        import java.util.Optional;
 import java.util.List;
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 public class AngajatServiceTest {
 
@@ -86,7 +84,7 @@ public class AngajatServiceTest {
     @Test
     public void testGetAngajatByRol() {
         // Creăm mai mulți angajați pentru test
-       Angajat angajat2 = new Angajat();
+        Angajat angajat2 = new Angajat();
         angajat2.setId(2);
         angajat2.setNume("Jane Doe");
         angajat2.setRol(Angajat.Rol.DEVELOPER);
@@ -114,4 +112,3 @@ public class AngajatServiceTest {
         verify(angajatRepository, times(1)).deleteById(1);
     }
 }
-

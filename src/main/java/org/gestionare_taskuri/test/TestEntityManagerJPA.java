@@ -1,3 +1,5 @@
+package org.gestionare_taskuri.test;
+
 
 import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.Test;
@@ -7,6 +9,7 @@ import task.Task;
 
 import java.util.List;
 
+import static com.github.javaparser.utils.Utils.assertNotNull;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -29,4 +32,3 @@ public class TestEntityManagerJPA {
         //
     }
 }
-

@@ -1,8 +1,7 @@
-package org.example.gestionare_taskuri;
+package org.gestionare_taskuri.repository;
 
 
 import echipa.Angajat;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

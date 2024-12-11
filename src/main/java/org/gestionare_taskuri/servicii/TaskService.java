@@ -1,7 +1,6 @@
-package servicii;
+package org.gestionare_taskuri.servicii;
 
 
-import org.example.gestionare_taskuri.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import task.Task;

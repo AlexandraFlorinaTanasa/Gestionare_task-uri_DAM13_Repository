@@ -1,7 +1,6 @@
-package servicii;
+package org.gestionare_taskuri.servicii;
 
 
-import org.example.gestionare_taskuri.SprintRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import task.SprintPlanning;
@@ -9,7 +8,6 @@ import task.SprintPlanningStatus;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 import static task.SprintPlanningStatus.COMPLETED;
 

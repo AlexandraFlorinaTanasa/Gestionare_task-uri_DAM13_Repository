@@ -1,4 +1,4 @@
-package org.example.gestionare_taskuri;
+package org.gestionare_taskuri.repository;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;

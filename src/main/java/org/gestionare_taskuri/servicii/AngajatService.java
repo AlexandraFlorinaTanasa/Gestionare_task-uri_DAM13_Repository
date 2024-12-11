@@ -1,8 +1,7 @@
-package servicii;
+package org.gestionare_taskuri.servicii;
 
 
 import echipa.Angajat;
-import org.example.gestionare_taskuri.AngajatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

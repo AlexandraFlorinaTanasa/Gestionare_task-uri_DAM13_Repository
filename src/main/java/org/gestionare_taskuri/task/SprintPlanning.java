@@ -1,4 +1,4 @@
-package task;
+package org.gestionare_taskuri.task;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

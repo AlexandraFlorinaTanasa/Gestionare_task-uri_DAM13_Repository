@@ -1,4 +1,4 @@
-package org.example.gestionare_taskuri;
+package org.gestionare_taskuri;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

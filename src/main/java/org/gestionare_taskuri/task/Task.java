@@ -1,11 +1,13 @@
-package task;
+package org.gestionare_taskuri.task;
 
 import echipa.Angajat;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import static jakarta.persistence.TemporalType.DATE;
 
