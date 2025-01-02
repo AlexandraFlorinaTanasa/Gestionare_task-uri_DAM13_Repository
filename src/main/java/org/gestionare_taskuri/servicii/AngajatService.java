@@ -14,7 +14,10 @@ import java.util.Optional;
     @Autowired
     private AngajatRepository angajatRepository;
 
-    public List<Angajat> getAngajatByNume(String nume) {
+    public AngajatService(AngajatRepository angajatRepository) {
+    }
+
+    public Optional<Angajat> getAngajatByNume(String nume) {
 
         return angajatRepository.findByNume(nume);
     }

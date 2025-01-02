@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
+import org.gestionare_taskuri.echipa.Angajat;
 
 @Data
 public class AngajatDTO {

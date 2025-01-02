@@ -5,15 +5,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 
-
-
-    @Repository
+@Repository
     public interface AngajatRepository extends JpaRepository<Angajat, Integer> {
 
         // Găsește un angajat după numele său
-        List<Angajat> findByNume(String nume);
+        Optional<Angajat> findByNume(String nume);
 
         // Găsește angajați după rolul lor
         List<Angajat> findByRole(Angajat.Rol rol);

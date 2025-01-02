@@ -2,6 +2,7 @@ package org.gestionare_taskuri.controller;
 
 import jakarta.validation.Valid;
 import org.gestionare_taskuri.DTO.AngajatDTO;
+import org.gestionare_taskuri.echipa.Angajat;
 import org.gestionare_taskuri.servicii.AngajatService;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
