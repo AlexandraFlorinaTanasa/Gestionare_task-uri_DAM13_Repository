@@ -3,7 +3,7 @@ package org.gestionare_taskuri.controller;
 import org.gestionare_taskuri.servicii.BacklogItemService;
 import org.gestionare_taskuri.task.BacklogItem;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +21,7 @@ public class BacklogItemController {
 
     @GetMapping
     public List<BacklogItem> getAllBacklogItems() {
-        return backlogItemService.getAllBacklogItems();
+        return (List<BacklogItem>) backlogItemService.getAllBacklogItems();
     }
 
     @GetMapping("/{id}")
