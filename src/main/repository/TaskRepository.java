@@ -19,4 +19,5 @@ public interface TaskRepository extends JpaRepository<Task, Integer> {
     List<Task> findByProjectManagerId(Integer cod); // Găsește task-uri după codul managerului de proiect.
 
     List<Task> findByStartDate(Date dataInceput); // Găsește task-uri după data.
+    List<Task> findByStartDateBetween(Date dataInceput, Date dataSfarsit);
 }
