@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -15,6 +16,33 @@ import java.util.List;
 public class TaskService {
     @Autowired
     private TaskRepository taskRepository;
+
+    public static Integer planNewTask(String nume, String startDateFromString) {
+        // Definirea formatului pentru data
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date startDate = null;
+
+        try {
+            // Convertirea șirului de caractere într-un obiect Date
+            startDate = dateFormat.parse(startDateFromString);
+        } catch (Exception e) {
+            // Tratarea erorilor de conversie a datei
+            System.out.println("Invalid date format. Please use yyyy-MM-dd.");
+            return null;
+        }
+
+        // Crearea unui task nou
+        Task newTask = new Task();
+        newTask.setName(nume);
+        newTask.setStartDate(startDate);
+
+        // Salvarea task-ului în repository
+        Task savedTask = taskRepository.save(newTask);
+
+        // Returnarea ID-ului task-ului
+        return savedTask.getId();
+    }
+}
 
     // Obține task-urile după status
     public List<Task> getTasksByStatus(TaskStatus taskStatus) {
@@ -27,7 +55,7 @@ public class TaskService {
     }
 
     // Obține task-urile care se încadrează într-un interval de date
-    public List<Task> getTasksByDateRange(Date dataInceput, Date dataSfarsit) {
+    public List<Task> getTasksByDateRange(Date dataInceput, LocalDate dataSfarsit) {
         return taskRepository.findByStartDateBetween(dataInceput, dataSfarsit);
     }
 
@@ -73,11 +101,29 @@ public class TaskService {
         return taskRepository.save(existingTask);
     }
 
-    // Șterge un task după ID
-    public void deleteTask(Integer cod) {
-        if (!taskRepository.existsById(cod)) {
-            throw new RuntimeException("Task-ul cu ID-ul " + cod + " nu există.");
+    // Șterge un task după cod
+    public void deleteTask(Task cod) {
+        if (!taskRepository.existsByCod(cod)) {
+            throw new RuntimeException("Task-ul cu codul " + cod + " nu există.");
         }
-        taskRepository.deleteById(cod);
+        taskRepository.deleteByCod(cod);
+    }
+
+    public Integer createWorkflowTask() {
+
+
+        // Crearea unui task nou
+        Task newTask = new Task();
+
+        // Setarea unor proprietăți pentru task-ul nou (de exemplu, un nume și o descriere)
+        newTask.setNume("New Workflow Task");
+        newTask.setDescriere("This is a new task created in the workflow.");
+
+        // Salvarea task-ului într-un repository (presupunem că există un repository pentru entitățile Task)
+        Task savedTask = taskRepository.save(newTask);
+
+        // Returnarea ID-ului task-ului creat
+        return savedTask.getCod();
     }
 }
+
