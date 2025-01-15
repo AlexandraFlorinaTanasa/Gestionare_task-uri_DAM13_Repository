@@ -2,16 +2,18 @@ package org.gestionare_taskuri.servicii;
 
 import org.gestionare_taskuri.echipa.Angajat;
 import org.gestionare_taskuri.repository.AngajatRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
 
 @Service
     public class AngajatService {
-    @Autowired
+@Autowired
     private AngajatRepository angajatRepository;
 
     public List<Angajat> getAngajatByNume(String nume) {
@@ -72,8 +74,10 @@ import java.util.Optional;
     }
 
 
-
-
+    public Collection<Angajat> getAllAngajati() {
+        // Folosim repository-ul pentru a obține toți angajații
+        return angajatRepository.findAll();
+    }
 }
 
 

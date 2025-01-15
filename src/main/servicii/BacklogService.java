@@ -2,7 +2,8 @@ package org.gestionare_taskuri.servicii;
 
 import org.gestionare_taskuri.repository.BacklogRepository;
 import org.gestionare_taskuri.task.Backlog;
-import org.springframework.beans.factory.annotation.Autowired;
+
+
 
 import org.springframework.stereotype.Service;
 
@@ -15,8 +16,8 @@ public class BacklogService {
 
     public BacklogRepository backlogRepository;
 
-    @Autowired(required = false)
-    public List<Backlog> getAllBacklogs(BacklogRepository backlogRepository) {
+
+    public List<Backlog> getAllBacklogs() {
         return  backlogRepository.findAll();
     }
 

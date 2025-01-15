@@ -66,7 +66,18 @@ public class SprintService {
     }
 
 
+    public void deleteSprint(SprintPlanning sprintPlanning) {
+        if (sprintPlanning != null && sprintPlanning.getCodSprint() != null) {
+            sprintRepository.delete(sprintPlanning);
+        } else {
+            throw new IllegalArgumentException("SprintPlanning object or its ID cannot be null");
+        }
     }
+}
+
+
+
+
 
 
     
